@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rate My Cheer Gym</title>
+        <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            rel="stylesheet">
+        <!-- Font Awesome CSS -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Blaka+Ink&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="assets/font/Inkfree.ttf">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+        @font-face {
+            font-family: 'Inkfree';
+            src: url('assets/font/Inkfree.ttf') format('truetype');
+        }
+        .navbar_signup:hover{
+            text-decoration: none !important;
+            color: #fff !important;
+        }
+        .navbar_login:hover{
+            text-decoration: none !important;
+            color: #fff !important;
+        }
+
+        .navlinks1 {
+            margin-left: 43px !important;
+        }
+      
+        .navbar_signup{
+            background-color: transparent;
+            color: #eb1798;
+            border: 2px solid #eb1798;
+            padding: 3px 20px;
+    border-radius: 8px;
+        }
+        .navbar_login{
+            background-color: #eb1798;
+            color: #fff;
+            border: 2px solid #eb1798;
+            padding: 3px 20px;
+    border-radius: 8px;
+        }
+        .section_one {
+    background-image: url('assets/img/banner_one.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    color: white;
+}
+
+.section_one h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.section_one .text-pink {
+    color: #ff007f;
+}
+
+.section_one .form-control {
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+.section_one .btn {
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+.section_one img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section_one h4 {
+    margin-top: 20px;
+    font-weight: normal;
+}
+.container.text-center.text-white h1 {
+    font-size: 27px;
+    text-align: center;
+    margin-right: 296px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+.search input {
+    width: 612px;
+    height: 36px;
+    background: #000 !important;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ccc, 0 0px 0px #ebebeb inset;
+    color: #fff ;
+}
+
+        a.instagram {
+            color: #fff;
+        }
+        .container.section_two_con {
+    margin-top: -240px;
+    text-align: center;
+}
+img.w-100.imgfix {
+    width: 243.29px !important;
+    height: 273.41px !important;
+}
+
+.card.section_two_card {
+    background: transparent;
+    border: 0px ;
+}
+h4.img_one_h4 {
+    color: #F05384;
+    font-size: 16px;
+    font-weight: 700;
+}
+h4.img_two_h4 {
+    color: #FACB27;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+h4.img_three_h4 {
+    color: #245E8C;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.cheer-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cheer-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.cheer-card .card-title {
+    font-size: 16px;
+    color: #1a73e8;
+}
+p.card-text {
+    font-size: 13px;
+}
+a.btn.btn-link {
+    padding: 0px;
+    text-decoration: none;
+}
+.cheer-card .btn-link {
+  color: #ff4081;
+  text-decoration: underline;
+}
+section.section_three {
+    padding: 50px 0px;
+    background-color: #e1e1e1;
+}
+
+
+        @media only screen and (max-width: 1090px) {
+               .navbarr {
+        
+                    height: 68vh;
+                }
+                .navlinks1 {
+                margin-left: 13px !important;
+                }
+ 
+            }
+            @media only screen and (max-width: 627px) {
+                .container.text-center.text-white h1 {
+                    font-size: 22px !important;
+                    margin-right: 0px !important;
+                  
+                }
+                .search input {
+                font-size: 10px;
+                width: 287px;
+                height: 36px;
+                background: #000 !important;
+                border: 1px solid #aaa;
+                border-radius: 5px;
+                box-shadow: 0 0 0px #ccc, 0 0px 0px #ebebeb inset;
+                color: #fff;
+            }
+            .container.section_two_con {
+                    margin-top: 0px;
+                    text-align: center;
+                }
+                h4.img_one_h4 {
+                    font-size: 15px;
+                }
+                    span.fa.fa-search {
+                    font-size: 12px;
+                    margin-top: 3px;
+                }
+                    section.section_one {
+                height: 50vh;
+            }
+            }
+        
+     
+    </style>
+    </head>
+    <body>
+
+        <header style="background: linear-gradient(to bottom, black, #464141);">
+            <div class="container">
+                <div class="row">
+                    <a href class="logo"><img src="assets/img/logo.png" alt></a>
+
+                    <ul class="navbarr">
+                        <li><a href="#" class="nav_link">Home</a></li>
+                        <li><a href="#" class="nav_link">Blog</a></li>
+                        <li class="linav">
+                            <a href="#"
+                                class="nav_link2">About</a></li>
+                        <li class="instagramli socialli">
+                            <a href="#"><img src="assets/img/insta.png"> </a>
+
+                        </li>
+
+                        <li class="twiterli socialli"><a href="#"><img
+                                    src="assets/img/x.png"></a></li>
+                        <li class="tiktokli socialli"><a href="#"><img
+                                    src="assets/img/tiktok.png"></a></li>
+
+                        <li class="navlinks1"><a href="#"
+                                class="navbar_signup">Sign Up</a></li>
+                        <li class="navlinks2"><a href="#"
+                                class="navbar_login">Login</a></li>
+
+                    </ul>
+
+                    <div class="mainn">
+                        <bi class="bi-list" id="menu-icon"></bi>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <section class="section_one">
+                <div class="container text-center text-white">
+                    <h1 class="mb-3">Your Gym. Your <span class="text-pink">Voice!</span></h1>
+                    <div class="search">
+                        <span class="fa fa-search"></span>
+                        <input
+                            placeholder="Enter your All Star Cheer gym to get started"
+                            style="background: #232222;border: 0px;">
+                    </div>
+                   
+                </div>
+            </section>
+
+            <section class="section_two">
+                <div class="container section_two_con">
+                     <div class="row section_two_row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-12 ">
+                            <div class="card section_two_card">
+                                <div class="card-body section_two_card_body">
+                                    <img src="assets/img/FINAL DELIVARY 0RDER 4-01 1.png" alt="Feedback Anonymous" class="w-100 imgfix">
+                                    <h4 class="img_one_h4">Your Feedback is Always Anonymous</h4>
+                                </div>
+                            </div>
+                        
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                            <div class="card section_two_card">
+                                <div class="card-body section_two_card_body">
+                            <img src="assets/img/FINAL DELIVARY project revisions file-01 (1) 1.png" alt="Manage Feedback" class="w-100 imgfix">
+                            <h4 class="img_two_h4">Manage & Edit your Feedbacks Easily</h4>
+                        </div>
+                    </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                            <div class="card section_two_card">
+                                <div class="card-body section_two_card_body">
+                            <img src="assets/img/attachment 1.png" alt="Honest Reviews" class="w-100 imgfix">
+                            <h4 class="img_three_h4">Honest Reviews for all Cheer Enthusiast</h4>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section_three mt-5">
+                <div class="container section_three_con ">
+                    <div class="row section_three_row">
+                        <div class="col-md-1"></div>
+
+                        <div class="col-md-5 mb-4">
+                            <div class="card cheer-card">
+                              <img src="assets/img/Rectangle 1141.png" class="card-img-top" alt="Cheer Trophy">
+                              <div class="card-body ">
+                                <h5 class="card-title">Top All Star Cheer Gyms Near You</h5>
+                                <p class="card-text">Gyms rated above 4.5 stars rating near you</p>
+                                <a href="#" class="btn btn-link">“23 Results”</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-5">
+                            <div class="card cheer-card">
+                              <img src="assets/img/Rectangle 1141 (1).png" class="card-img-top" alt="Cheer Trophy">
+                              <div class="card-body ">
+                                <h5 class="card-title">Nearest All Star Gyms</h5>
+                                <p class="card-text">Nearest Gyms near You</p>
+                                <a href="#" class="btn btn-link">“23 Results”</a>
+                              </div>
+                            </div>
+                          </div>
+                        <div class="col-md-1"></div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <footer
+            style="background-image: url('assets/img/banner_one.png');background-size: cover;background-position: center;background-repeat: no-repeat;height: auto;">
+            <div class="container footer_container">
+                <div class="footer_row row">
+                    <div
+                        class="footer_div_one col-lg-4 col-sm-4 col-md-4 col-12 mt-4">
+                        <img src="assets/img/logo.png" class="w-100">
+                    </div>
+                    <div
+                        class="footer_div_two col-lg-7 col-sm-7 col-md-7 col-12 mt-5">
+                        <a href="#" class="footer_link">Help</a>
+                        <a href="#" class="footer_link">Site Guidelines</a>
+                        <a href="#" class="footer_link">Privacy Policy</a>
+                        <a href="#" class="footer_link">Terms & Conditions</a>
+                        <a href="#" class="footer_link">Cookie Policy</a>
+                        <a href="#" class="footer_link ">Blog</a>
+                    </div>
+                    <div
+                        class="footer_div_three col-lg-1  col-sm-1 col-md-1 col-y mt-5">
+                        <ul class="ul_footer">
+                            <li class="li_footer1"> <a href="#"
+                                    class="instagram1"><i
+                                        class="bi bi-instagram iconnns"></i></a></li>
+                            <li class="li_footer2"><a href="#"
+                                    class="twiter2"><i
+                                        class="bi bi-x iconnns"></i></a></li>
+                            <li class="li_footer3"><a href="#"
+                                    class="tiktok3"><i
+                                        class="bi bi-tiktok iconnns"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12">
+                        <p class="footer_pragraphy">© 2024 Rate My Cheer Gym,
+                            LLC. All Rights Reserved</p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/style.js"></script>
+    </body>
+</html>
