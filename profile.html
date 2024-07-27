@@ -34,7 +34,9 @@
         <link rel="stylesheet" href="assets/font/Inkfree.ttf">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <style>
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5/6Z5j6AA1F4PcmKK+F5pY5cHgUyE1jQ3t8R+1JcfBZGOMZC2BQERYP1dDk8tA==" crossorigin="anonymous" referrerpolicy="no-referrer" /><style>
+
         @font-face {
             font-family: 'Inkfree';
             src: url('assets/font/Inkfree.ttf') format('truetype');
@@ -69,8 +71,182 @@
             margin: auto;
             font-family: Arial, sans-serif;
         }
-       
-       
+        li.mobile {
+                display: none;
+            }
+
+
+
+            .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+    margin-top: 40px;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+     
+.login-container {
+    padding: 40px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #123e9a;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url('eye-icon.png') no-repeat center center;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.signup, .forgot-password {
+    font-size: 12px;
+    color: #999;
+}
+
+.signup span {
+    color: #123e9a;
+    text-decoration: underline;
+}
+
+.sign-btn {
+    width: 100%;
+    background-color: #ff1493;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.social-login {
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 10px;
+    color: #999;
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons button {
+    width: 100%;
+    height: 45px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.social-icons button:hover {
+    background-color: #fff;
+    box-shadow: 0px 1px 4px 1px #534e4e;
+}
+
+.google-btn {
+    background: url('google-icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+.apple-btn {
+    background: url('apple-icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+.facebook-btn {
+    background: url('facebook-icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+        @media (max-width: 627px) {
+
+            li.mobile {
+                display: block;
+            }
+            li.web{
+                display: none;
+            }
+            .modal {
+                    margin-top: 40px;
+                }
+                .login-container {
+                    padding: 0px;
+                    text-align: center;
+                }
+        }
      
     </style>
     </head>
@@ -86,17 +262,23 @@
                         <li><a href="gyms.html" class="nav_link">Blog</a></li>
                         <li class="linav"><a href="profile.html"
                                 class="nav_link2">About</a></li>
-                        <li>
+                        <li class="web">
                             <div class="search">
                                 <span class="fa fa-search"></span>
                                 <input placeholder="Search For Gym"
                                     style="background: #232222;border: 0px;">
                             </div>
                         </li>
-                        <li class="navlinks1"><a href="review.html"
-                                class="navbar_signup">Sign Up</a></li>
-                        <li class="navlinks2"><a href="review.html"
-                                class="navbar_login">Login</a></li>
+                        <li class="navlinks1"> <a href="#" class="navbar_signup" id="signup-link-navbar">Sign Up</a></li>
+                        <li class="navlinks2"><a href="#" class="navbar_login" id="login-link">Login</a></li>
+                       
+                                <li class="mobile">
+                                    <div class="search">
+                                        <span class="fa fa-search"></span>
+                                        <input placeholder="Search For Gym"
+                                            style="background: #232222;border: 0px;">
+                                    </div>
+                                </li>
 
                     </ul>
 
@@ -110,7 +292,37 @@
                     </div>
                 </div>
             </div>
-            
+            <div id="login-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <div class="login-container" id="modal-content">
+                        <!-- Initial Content: Sign In Form -->
+                        <h2>Sign In</h2>
+                        <form id="login-form">
+                            <div class="input-group">
+                                <input type="email" placeholder="Enter Email" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="password" placeholder="Password" required>
+                                <button type="button" class="show-password"></button>
+                            </div>
+                            <div class="actions">
+                                <a href="#" class="signup" id="signup-link">Click <span>here</span> to Sign Up</a>
+                                <a href="#" class="forgot-password" id="forgot-password-link">Forgot Password ?</a>
+                            </div>
+                            <button type="submit" class="sign-btn">Sign</button>
+                        </form>
+                        <div class="social-login">
+                            <p>Or continue</p>
+                            <div class="social-icons">
+                                <button class="google-btn"><img src="assets/img/google.png" ></button>
+                                <button class="apple-btn"><img src="assets/img/apple.png" ></button>
+                                <button class="facebook-btn"><img src="assets/img/facebook.png" ></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </header>
         <main>
@@ -152,6 +364,7 @@
                             <div class="heart_btn mt-3"
                                 style="display: flex; align-items: center;">
                                 <a href="#"><i class="fa-regular fa-heart"
+                                    
                                         style="font-size: 45px; color: #fff;"></i></a>
                                 <a href="#" class="review_btn"
                                     style="margin-left: 10px;">Write a
@@ -169,10 +382,10 @@
             <section class="section_two">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                             <div class="card_div">
                                 <div
-                                    style="flex-shrink: 0; box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);    padding: 27px 27px;">
+                                    style="flex-shrink: 0;box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);padding: 27px 27px;border-radius: 10px;">
                                     <img src="assets/img/Group.png"
                                         alt="Cleanliness Icon"
                                         style="width: 40px; height: 40px;">
@@ -203,10 +416,10 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                             <div class="card_div">
                                 <div
-                                    style="flex-shrink: 0; box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);    padding: 27px 27px;">
+                                    style="flex-shrink: 0;box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);padding: 27px 27px;border-radius: 10px;">
                                     <img src="assets/img/User check.png"
                                         alt="Cleanliness Icon"
                                         style="width: 40px; height: 40px;">
@@ -237,10 +450,10 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                             <div class="card_div">
                                 <div
-                                    style="flex-shrink: 0; box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);    padding: 27px 27px;">
+                                    style="flex-shrink: 0;box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);padding: 27px 27px;border-radius: 10px;">
                                     <img src="assets/img/Vectorr.png"
                                         alt="Cleanliness Icon"
                                         style="width: 40px; height: 40px;">
@@ -271,10 +484,10 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                             <div class="card_div">
                                 <div
-                                    style="flex-shrink: 0; box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);    padding: 27px 27px;">
+                                    style="flex-shrink: 0;box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);padding: 27px 27px;border-radius: 10px;">
                                     <img src="assets/img/healthicons_happy.png"
                                         alt="Cleanliness Icon"
                                         style="width: 40px; height: 40px;">
@@ -305,10 +518,10 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                             <div class="card_div">
                                 <div
-                                    style="flex-shrink: 0; box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);    padding: 27px 27px;">
+                                    style="flex-shrink: 0;box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);padding: 27px 27px;border-radius: 10px;">
                                     <img
                                         src="assets/img/material-symbols-light_health.png"
                                         alt="Cleanliness Icon"
@@ -340,10 +553,10 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                             <div class="card_div">
                                 <div
-                                    style="flex-shrink: 0; box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);    padding: 27px 27px;">
+                                    style="flex-shrink: 0;box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);padding: 27px 27px;border-radius: 10px;">
                                     <img
                                         src="assets/img/material-symbols-light.png"
                                         alt="Cleanliness Icon"
@@ -375,10 +588,10 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                             <div class="card_div">
                                 <div
-                                    style="flex-shrink: 0; box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);    padding: 27px 27px;">
+                                    style="flex-shrink: 0;box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);padding: 27px 27px;border-radius: 10px;">
                                     <img
                                         src="assets/img/solar_hand-money-linear.png"
                                         alt="Cleanliness Icon"
@@ -411,10 +624,10 @@
 
                         </div>
                         <div
-                            class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 mb-5">
+                            class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 mb-5">
                             <div class="card_div">
                                 <div
-                                    style="flex-shrink: 0; box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);    padding: 27px 27px;">
+                                    style="flex-shrink: 0;box-shadow:3px 0px 6px 1px rgba(0, 0, 0, 0.25);padding: 27px 27px;border-radius: 10px;">
                                     <img src="assets/img/Layout.png"
                                         alt="Cleanliness Icon"
                                         style="width: 40px; height: 40px;">
@@ -451,10 +664,11 @@
             </section>
             <section class="section-three">
                 <div class="container">
-                    <h3 class="three_sec_h3">Reviews (400+)</h3>
+                    <h3 class="three_sec_h3 mt-4 mb-4">Reviews (400+)</h3>
                     <div class="row">
                         <div class="card" style="width: 100%;">
                             <div class="card-body">
+                                <div class="container p-5">
                                 <div class="sec-three-spans">
                                     <span class="three_sec_one"
                                         style="color: #00000085;">Fri, 10 Aug
@@ -481,7 +695,7 @@
                                 </div>
                                 <div class="row">
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -518,7 +732,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -556,7 +770,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -594,7 +808,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -632,7 +846,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12 mt-5 ">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -670,7 +884,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -708,7 +922,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -746,7 +960,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 mb-5">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5 mb-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -804,11 +1018,12 @@
 
                                     </div>
                                 </div>
-
+                            </div>
                             </div>
                         </div>
                         <div class="card mt-4" style="width: 100%;">
                             <div class="card-body">
+                                <div class="container p-5">
                                 <div class="sec-three-spans">
                                     <span class="three_sec_one"
                                         style="color: #00000085;">Fri, 10 Aug
@@ -835,7 +1050,7 @@
                                 </div>
                                 <div class="row">
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -872,7 +1087,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -910,7 +1125,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -948,7 +1163,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -986,7 +1201,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1024,7 +1239,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1062,7 +1277,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1100,7 +1315,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 mb-5">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5 mb-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1158,11 +1373,12 @@
 
                                     </div>
                                 </div>
-
+                                </div>
                             </div>
                         </div>
                         <div class="card mt-4" style="width: 100%;">
                             <div class="card-body">
+                                <div class="container p-5">
                                 <div class="sec-three-spans">
                                     <span class="three_sec_one"
                                         style="color: #00000085;">Fri, 10 Aug
@@ -1189,7 +1405,7 @@
                                 </div>
                                 <div class="row">
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1226,7 +1442,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1264,7 +1480,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1302,7 +1518,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1340,7 +1556,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1378,7 +1594,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1416,7 +1632,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1454,7 +1670,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 mb-5">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5 mb-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1512,11 +1728,12 @@
 
                                     </div>
                                 </div>
-
+                                </div>
                             </div>
                         </div>
                         <div class="card mt-4" style="width: 100%;">
                             <div class="card-body">
+                                <div class="container p-5">
                                 <div class="sec-three-spans">
                                     <span class="three_sec_one"
                                         style="color: #00000085;">Fri, 10 Aug
@@ -1543,7 +1760,7 @@
                                 </div>
                                 <div class="row">
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1580,7 +1797,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1618,7 +1835,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1656,7 +1873,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1694,7 +1911,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1732,7 +1949,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1770,7 +1987,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 ">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1808,7 +2025,7 @@
 
                                     </div>
                                     <div
-                                        class="col-lg-4 col-md-4 col-sm-4 col-12 mt-5 mb-5">
+                                        class="col-lg-4 col-md-6 col-sm-12 col-12  mt-5 mb-5">
                                         <div class="card_div_three">
                                             <div
                                                 style="flex-shrink: 0;     padding: 27px 27px;">
@@ -1866,7 +2083,7 @@
 
                                     </div>
                                 </div>
-
+                                </div> 
                             </div>
                         </div>
 
@@ -1874,7 +2091,7 @@
                     <a href="#" class="three_sec_h3 mt-3"
                         style="text-align:center;display: block;font-family: 'Ink free';
                     font-size: 21px;
-                    color: #00000069;">See More</a>
+                    color: #00000069; text-decoration: underline;">See More</a>
 
                 </div>
             </section>
@@ -1901,7 +2118,7 @@
                         <li class="li_footer3"><a href="#" class="tiktok3"><i class="bi bi-tiktok iconnns"></i></a></li>
                     </ul>
                     </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 copyrightdiv">
                             <p class="footer_pragraphy">© 2024 Rate My Cheer Gym, LLC. All Rights Reserved</p>
                         </div>
                  
@@ -1909,5 +2126,138 @@
             </div>
         </footer>
         <script src="assets/js/style.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById("login-modal");
+        var loginBtn = document.getElementById("login-link");
+        var signupNavbarBtn = document.getElementById("signup-link-navbar");
+        var span = document.getElementsByClassName("close-button")[0];
+        var modalContent = document.getElementById("modal-content");
+    
+        var loginFormHTML = `
+            <h2>Sign In</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" placeholder="Enter Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <button type="button" class="show-password"></button>
+                </div>
+                <div class="actions">
+                    <a href="#" class="signup" id="signup-link">Click <span>here</span> to Sign Up</a>
+                    <a href="#" class="forgot-password" id="forgot-password-link">Forgot Password ?</a>
+                </div>
+                <button type="submit" class="sign-btn">Sign</button>
+            </form>
+            <div class="social-login">
+                <p>Or continue</p>
+                <div class="social-icons">
+                    <button class="google-btn"><img src="assets/img/google.png"></button>
+                    <button class="apple-btn"><img src="assets/img/apple.png"></button>
+                    <button class="facebook-btn"><img src="assets/img/facebook.png"></button>
+                </div>
+            </div>
+        `;
+    
+        var signupFormHTML = `
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" class="form-control" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Enter Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <button type="button" class="show-password"></button>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="actions">
+                      <a href="#" class="signup" id="signin-link">Click <span>here</span> to Sign In</a>
+                </div>
+                <button type="submit" class="sign-btn">Sign Up</button>
+            </form>
+            <div class="social-login">
+                <p>Or continue</p>
+                <div class="social-icons">
+                    <button class="google-btn"><img src="assets/img/google.png"></button>
+                    <button class="apple-btn"><img src="assets/img/apple.png"></button>
+                    <button class="facebook-btn"><img src="assets/img/facebook.png"></button>
+                </div>
+            </div>
+        `;
+    
+        var forgotPasswordFormHTML = `
+            <h2>Forgot Password</h2>
+            <form id="forgot-password-form">
+                <div class="input-group">
+                    <input type="email" placeholder="Enter Email" required>
+                </div>
+                <div class="actions">
+                      <a href="#" class="signup" id="signin-link">Click <span>here</span> to Sign In</a>
+    
+                </div>
+                <button type="submit" class="sign-btn">Reset Password</button>
+            </form>
+        `;
+    
+        loginBtn.onclick = function() {
+            modal.style.display = "block";
+            modalContent.innerHTML = loginFormHTML;
+            addToggleEventListeners();
+        }
+    
+        signupNavbarBtn.onclick = function() {
+            modal.style.display = "block";
+            modalContent.innerHTML = signupFormHTML;
+            addToggleEventListeners();
+        }
+    
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    
+        function addToggleEventListeners() {
+            var signupLink = document.getElementById("signup-link");
+            var signinLink = document.getElementById("signin-link");
+            var forgotPasswordLink = document.getElementById("forgot-password-link");
+    
+            if (signupLink) {
+                signupLink.onclick = function(event) {
+                    event.preventDefault();
+                    modalContent.innerHTML = signupFormHTML;
+                    addToggleEventListeners();
+                }
+            }
+    
+            if (signinLink) {
+                signinLink.onclick = function(event) {
+                    event.preventDefault();
+                    modalContent.innerHTML = loginFormHTML;
+                    addToggleEventListeners();
+                }
+            }
+    
+            if (forgotPasswordLink) {
+                forgotPasswordLink.onclick = function(event) {
+                    event.preventDefault();
+                    modalContent.innerHTML = forgotPasswordFormHTML;
+                    addToggleEventListeners();
+                }
+            }
+        }
+    });
+    
+            </script>
     </body>
 </html>

@@ -115,6 +115,9 @@ textarea.form-control.reviewtext {
 section.section_two{
     margin-top: 200px;
 }
+li.mobile {
+    display: none;
+}
 .rating-container {
             display: flex;
             align-items: center;
@@ -157,7 +160,29 @@ section.section_two{
 @media (max-width: 627px) {
     .rating-stars i {
    
-    padding: 0px 16px !important;
+    padding: 0px 10px !important;
+}
+.sec_one_h1 {
+    color: #fff;
+    font-size: 25px;
+}
+p.rating-p{
+    font-size: 14px;
+}
+li.mobile {
+    display: block;
+}
+li.web{
+    display: none;
+}
+section.section_two {
+    margin-top: 25px;
+}
+.rating-text {
+    font-size: 13.17px;
+}
+textarea.form-control.reviewtext {
+    font-size: 13px;
 }
 .card.review_card_two {
     margin-top: 0px;
@@ -173,10 +198,45 @@ i.fas.fa-star.sif {
 .card.review_card_two.displaymobile {
     display: block !important;
 }
-
+p.lastcolp {
+    font-size: 14.17px;
+    text-align: justify;
 }
+.col-lg-12.col-md-12.col-sm-12.col-12.lastcol.mt-5.mb-5 {
+    text-align: center;
+}
+}
+
+
+
 .card.review_card_two.displaymobile {
     display: none;
+}
+h3.review_rate {
+    display: flex;
+    width: 26%;
+    font-size: 16px;
+    float: left;
+    margin-top: 34px;
+    font-weight: 600;
+    color: #fff;
+}
+p.lastcolp {
+    font-size: 11.17px;
+    line-height: 16.76px;
+}
+a.lastcola {
+    background: #EB1798;
+    color: #fff;
+    border-radius: 10px;
+    padding: 6px 21px;
+    border: 0px;
+    font-size: 16px;
+    font-weight: 400;
+}
+a.lastcola:hover {
+    background: #b30d73;
+    text-decoration: none;
 }
     </style>
     </head>
@@ -192,9 +252,9 @@ i.fas.fa-star.sif {
                         <li><a href="gyms.html" class="nav_link">Blog</a></li>
                         <li class="linav"><a href="profile.html"
                                 class="nav_link2">About</a></li>
-                        <li>
+                        <li  class="web">
                             <div class="search">
-                                <span class="fa fa-search"></span>
+                                <span class="fa fa-search "></span>
                                 <input placeholder="Search For Gym"
                                     style="background: #232222;border: 0px;">
                             </div>
@@ -203,7 +263,14 @@ i.fas.fa-star.sif {
                                 class="navbar_signup">Sign Up</a></li>
                         <li class="navlinks2"><a href="review.html"
                                 class="navbar_login">Login</a></li>
-
+                                
+                                <li class="mobile">
+                                    <div class="search ">
+                                        <span class="fa fa-search"></span>
+                                        <input placeholder="Search For Gym"
+                                            style="background: #232222;border: 0px;">
+                                    </div>
+                                </li>
                     </ul>
 
                     <div class="mainn">
@@ -246,21 +313,21 @@ i.fas.fa-star.sif {
                                         </ul>
                                         <a href="#" class="rviewa ml-3">View all Guidelines</a>
                                     </div>
-                                    <div class="card review_card_two displayweb" style="    background: linear-gradient(#EB1798 100%, #850D56 100%);">
+                                    <div class="card review_card_two displayweb" style="    background: linear-gradient(#EB1798 100%, #850D56 100%); width: 100%;">
                                         <div class="card-body review_card_body_two">
-                                        <span class="review_rate">Rate My Gym</span>
+                                        <h3 class="review_rate">Rate My Gym</h3>
 
                                             <span class="span_sec_two">
                                                 <i class="fas fa-star sif"
-                                                    style="font-size: 45px;margin-left: 18px;border: 0px;padding: 20px 9px;"></i>
+                                                    style="font-size: 45px;margin-left: 16px;border: 0px;padding: 20px 8px;color: #FFA500;"></i>
                                                 <i class="fas fa-star sif"
-                                                    style="font-size: 45px;border: 0px;padding: 20px 9px;"></i>
+                                                    style="font-size: 45px;border: 0px;padding: 20px 8px; color: #FFA500;"></i>
                                                 <i class="fas fa-star sif"
-                                                    style="font-size: 45px;border: 0px; padding: 20px 9px;"></i>
+                                                    style="font-size: 45px;border: 0px; padding: 20px 8px; color: #FFA500;"></i>
                                                 <i class="fas fa-star sif"
-                                                    style="font-size: 45px;border: 0px; padding: 20px 9px;"></i>
+                                                    style="font-size: 45px;border: 0px; padding: 20px 8px; color: #FFA500;"></i>
                                                 <i class="fas fa-star sif"
-                                                    style="font-size: 45px;border: 0px; padding: 20px 9px;"></i>
+                                                    style="font-size: 45px;border: 0px; padding: 20px 8px; color: #FFA500;"></i>
                                             </span>
                                           <textarea name="" id="" class="form-control reviewtext" placeholder="Discuss your personal experience with this All Star Cheer gym. What’s great about it? What could be improved?" ></textarea>  
                                         </div>
@@ -280,161 +347,9 @@ i.fas.fa-star.sif {
             <section class="section_two">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
-                            <div class="rating-container">
-                               
-                                <div>
-                                    <h3 class="rating-text">Facility Cleanliness:</h3>
-                                    <p class="rating-p">How clean and well-maintained the gym is.</p>
-                                   
-                                    <div class="rating-stars">
-                                        <span><img src="assets/img/Group.png"></span>
-
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
-                            <div class="rating-container">
-                               
-                                <div>
-                                    <h3 class="rating-text">Coaching Quality:</h3>
-                                    <p class="rating-p">The expertise, effectiveness, and approachability of the coaching staff.</p>
-                                   
-                                    <div class="rating-stars">
-                                        <span><img src="assets/img/User check.png"></span>
-
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
-                            <div class="rating-container">
-                               
-                                <div>
-                                    <h3 class="rating-text">Equipment Quality:</h3>
-                                    <p class="rating-p">The condition and availability of equipment used for training.</p>
-                                   
-                                    <div class="rating-stars">
-                                        <span><img src="assets/img/Vectorr.png"></span>
-
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
-                            <div class="rating-container">
-                               
-                                <div>
-                                    <h3 class="rating-text">Atmosphere:</h3>
-                                    <p class="rating-p">The general environment and culture of the gym.</p>
-                                   
-                                    <div class="rating-stars">
-                                        <span><img src="assets/img/healthicons_happy.png"></span>
-
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
-                            <div class="rating-container">
-                               
-                                <div>
-                                    <h3 class="rating-text">Safety Standards:</h3>
-                                    <p class="rating-p">The gym’s adherence to safety protocols and measures.</p>
-                                   
-                                    <div class="rating-stars">
-                                        <span><img src="assets/img/material-symbols-light_health.png"></span>
-
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
-                            <div class="rating-container">
-                               
-                                <div>
-                                    <h3 class="rating-text">Communication:</h3>
-                                    <p class="rating-p">How well the gym communicates with members regarding schedules, updates, and feedback.</p>
-                                   
-                                    <div class="rating-stars">
-                                        <span><img src="assets/img/material-symbols-light.png"></span>
-
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
-                            <div class="rating-container">
-                               
-                                <div>
-                                    <h3 class="rating-text">Value for Money:</h3>
-                                    <p class="rating-p">Whether the services and facilities provided are worth the cost.</p>
-                                   
-                                    <div class="rating-stars">
-                                        <span><img src="assets/img/solar_hand-money-linear.png"></span>
-
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
-                            <div class="rating-container">
-                               
-                                <div>
-                                    <h3 class="rating-text">Class Variety and Availability:</h3>
-                                    <p class="rating-p">The range of classes offered and their scheduling.</p>
-                                   
-                                    <div class="rating-stars">
-                                        <span><img src="assets/img/Layout.png"></span>
-
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                        <i class="fas fa-star mt-3"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
+                             
                        <div class="col-lg-12">
-                        <div class="card review_card_two displaymobile" style="    background: linear-gradient(#EB1798 100%, #850D56 100%);">
+                        <div class="card review_card_two displaymobile" style="background: linear-gradient(#EB1798 100%, #850D56 100%);">
                             <div class="card-body review_card_body_two">
                             <span class="review_rate">Rate My Gym</span>
 
@@ -454,6 +369,164 @@ i.fas.fa-star.sif {
                             </div>
                         </div>
                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
+                            <div class="rating-container">
+                               
+                                <div>
+                                    <h3 class="rating-text">Facility Cleanliness:</h3>
+                                    <p class="rating-p">How clean and well-maintained the gym is.</p>
+                                   
+                                    <div class="rating-stars">
+                                        <span><img src="assets/img/Group.png" style="margin-left: 5px;"></span>
+
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
+                            <div class="rating-container">
+                               
+                                <div>
+                                    <h3 class="rating-text">Coaching Quality:</h3>
+                                    <p class="rating-p">The expertise, effectiveness, and approachability of the coaching staff.</p>
+                                   
+                                    <div class="rating-stars">
+                                        <span><img src="assets/img/User check.png" style="margin-left: 9px;"></span>
+
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
+                            <div class="rating-container">
+                               
+                                <div>
+                                    <h3 class="rating-text">Equipment Quality:</h3>
+                                    <p class="rating-p">The condition and availability of equipment used for training.</p>
+                                   
+                                    <div class="rating-stars">
+                                        <span><img src="assets/img/Vectorr.png" style="margin-left: 10px;"></span>
+
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
+                            <div class="rating-container">
+                               
+                                <div>
+                                    <h3 class="rating-text">Atmosphere:</h3>
+                                    <p class="rating-p">The general environment and culture of the gym.</p>
+                                   
+                                    <div class="rating-stars">
+                                        <span><img src="assets/img/healthicons_happy.png" style="margin-left: 3px;"></span>
+
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
+                            <div class="rating-container">
+                               
+                                <div>
+                                    <h3 class="rating-text">Safety Standards:</h3>
+                                    <p class="rating-p">The gym’s adherence to safety protocols and measures.</p>
+                                   
+                                    <div class="rating-stars">
+                                        <span><img src="assets/img/material-symbols-light_health.png" style="margin-left: 1px;"></span>
+
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
+                            <div class="rating-container">
+                               
+                                <div>
+                                    <h3 class="rating-text">Communication:</h3>
+                                    <p class="rating-p">How well the gym communicates with members regarding schedules, updates, and feedback.</p>
+                                   
+                                    <div class="rating-stars">
+                                        <span><img src="assets/img/material-symbols-light.png" style="margin-left: 6px;"></span>
+
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
+                            <div class="rating-container">
+                               
+                                <div>
+                                    <h3 class="rating-text">Value for Money:</h3>
+                                    <p class="rating-p">Whether the services and facilities provided are worth the cost.</p>
+                                   
+                                    <div class="rating-stars">
+                                        <span><img src="assets/img/solar_hand-money-linear.png" style="margin-left: 7px;"></span>
+
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-5 mb-5">
+                            <div class="rating-container">
+                               
+                                <div>
+                                    <h3 class="rating-text">Class Variety and Availability:</h3>
+                                    <p class="rating-p">The range of classes offered and their scheduling.</p>
+                                   
+                                    <div class="rating-stars">
+                                        <span><img src="assets/img/Layout.png" style="margin-left: 7px;"></span>
+
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                        <i class="fas fa-star mt-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 lastcol mt-5 mb-5">
+                            <p class="lastcolp">By clicking the “Submit Button”, I acknowledge that i have read and agreed to the Rate My Cheer Gym’s <a href="#" style="color: #3771C8;"> Site Guidelines, Terms of Use,</a> and <a href="#" style="color: #3771C8;">privacy policy.</a> Submitted data becomes the property of Rate my Cheer Gym, LLC.</p>
+                            <a href="#" class="lastcola">Submit Review</a>
+                        </div>
+
+                   
                     </div>
                 </div>
             </section>
@@ -481,7 +554,7 @@ i.fas.fa-star.sif {
                         <li class="li_footer3"><a href="#" class="tiktok3"><i class="bi bi-tiktok iconnns"></i></a></li>
                     </ul>
                     </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 copyrightdiv">
                             <p class="footer_pragraphy">© 2024 Rate My Cheer Gym, LLC. All Rights Reserved</p>
                         </div>
                  
@@ -489,5 +562,138 @@ i.fas.fa-star.sif {
             </div>
         </footer>
         <script src="assets/js/style.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById("login-modal");
+        var loginBtn = document.getElementById("login-link");
+        var signupNavbarBtn = document.getElementById("signup-link-navbar");
+        var span = document.getElementsByClassName("close-button")[0];
+        var modalContent = document.getElementById("modal-content");
+    
+        var loginFormHTML = `
+            <h2>Sign In</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" placeholder="Enter Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <button type="button" class="show-password"></button>
+                </div>
+                <div class="actions">
+                    <a href="#" class="signup" id="signup-link">Click <span>here</span> to Sign Up</a>
+                    <a href="#" class="forgot-password" id="forgot-password-link">Forgot Password ?</a>
+                </div>
+                <button type="submit" class="sign-btn">Sign</button>
+            </form>
+            <div class="social-login">
+                <p>Or continue</p>
+                <div class="social-icons">
+                    <button class="google-btn"><img src="assets/img/google.png"></button>
+                    <button class="apple-btn"><img src="assets/img/apple.png"></button>
+                    <button class="facebook-btn"><img src="assets/img/facebook.png"></button>
+                </div>
+            </div>
+        `;
+    
+        var signupFormHTML = `
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" class="form-control" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Enter Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <button type="button" class="show-password"></button>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="actions">
+                      <a href="#" class="signup" id="signin-link">Click <span>here</span> to Sign In</a>
+                </div>
+                <button type="submit" class="sign-btn">Sign Up</button>
+            </form>
+            <div class="social-login">
+                <p>Or continue</p>
+                <div class="social-icons">
+                    <button class="google-btn"><img src="assets/img/google.png"></button>
+                    <button class="apple-btn"><img src="assets/img/apple.png"></button>
+                    <button class="facebook-btn"><img src="assets/img/facebook.png"></button>
+                </div>
+            </div>
+        `;
+    
+        var forgotPasswordFormHTML = `
+            <h2>Forgot Password</h2>
+            <form id="forgot-password-form">
+                <div class="input-group">
+                    <input type="email" placeholder="Enter Email" required>
+                </div>
+                <div class="actions">
+                      <a href="#" class="signup" id="signin-link">Click <span>here</span> to Sign In</a>
+    
+                </div>
+                <button type="submit" class="sign-btn">Reset Password</button>
+            </form>
+        `;
+    
+        loginBtn.onclick = function() {
+            modal.style.display = "block";
+            modalContent.innerHTML = loginFormHTML;
+            addToggleEventListeners();
+        }
+    
+        signupNavbarBtn.onclick = function() {
+            modal.style.display = "block";
+            modalContent.innerHTML = signupFormHTML;
+            addToggleEventListeners();
+        }
+    
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    
+        function addToggleEventListeners() {
+            var signupLink = document.getElementById("signup-link");
+            var signinLink = document.getElementById("signin-link");
+            var forgotPasswordLink = document.getElementById("forgot-password-link");
+    
+            if (signupLink) {
+                signupLink.onclick = function(event) {
+                    event.preventDefault();
+                    modalContent.innerHTML = signupFormHTML;
+                    addToggleEventListeners();
+                }
+            }
+    
+            if (signinLink) {
+                signinLink.onclick = function(event) {
+                    event.preventDefault();
+                    modalContent.innerHTML = loginFormHTML;
+                    addToggleEventListeners();
+                }
+            }
+    
+            if (forgotPasswordLink) {
+                forgotPasswordLink.onclick = function(event) {
+                    event.preventDefault();
+                    modalContent.innerHTML = forgotPasswordFormHTML;
+                    addToggleEventListeners();
+                }
+            }
+        }
+    });
+    
+            </script>
     </body>
 </html>

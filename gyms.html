@@ -77,6 +77,185 @@ h3.main_h3_gyms.pt-4 {
     font-weight: 400;
     font-family: 'Poppins';
 }
+li.mobile {
+    display: none;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+    margin-top: 40px;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+     
+.login-container {
+    padding: 40px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #123e9a;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url('eye-icon.png') no-repeat center center;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.signup, .forgot-password {
+    font-size: 12px;
+    color: #999;
+}
+
+.signup span {
+    color: #123e9a;
+    text-decoration: underline;
+}
+
+.sign-btn {
+    width: 100%;
+    background-color: #ff1493;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.social-login {
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 10px;
+    color: #999;
+}
+
+.navlinks1 {
+    margin-left: 4px !important;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons button {
+    width: 100%;
+    height: 45px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.social-icons button:hover {
+    background-color: #fff;
+    box-shadow: 0px 1px 4px 1px #534e4e;
+}
+
+.google-btn {
+    background: url('google-icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+.apple-btn {
+    background: url('apple-icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+.facebook-btn {
+    background: url('facebook-icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+
+@media (max-width: 627px) {
+
+li.mobile {
+    display: block;
+}
+li.web{
+    display: none;
+}
+.modal {
+    margin-top: 40px;
+    }
+.login-container {
+   padding: 0px;
+   text-align: center;
+     }
+}
+
+
+
     </style>
 </head>
 <body>
@@ -88,23 +267,60 @@ h3.main_h3_gyms.pt-4 {
                     <li><a href="index.html" class="nav_link">Home</a></li>
                     <li><a href="gyms.html" class="nav_link">Blog</a></li>
                     <li class="linav"><a href="profile.html" class="nav_link2">About</a></li>
-                    <li>
+                    <li class="web">
                         <div class="search">
                             <span class="fa fa-search"></span>
                             <input placeholder="My Gym" style="background: #232222;border: 0px;">
                         </div>
                     </li>
-                    <li class="navlinks1"><a href="review.html" class="navbar_signup">Sign Up</a></li>
-                    <li class="navlinks2"><a href="review.html" class="navbar_login">Login</a></li>
+                    <li class="navlinks1"> <a href="#" class="navbar_signup" id="signup-link-navbar">Sign Up</a></li>
+                    <li class="navlinks2"><a href="#" class="navbar_login" id="login-link">Login</a></li>
+                    <li class="mobile">
+                        <div class="search">
+                            <span class="fa fa-search"></span>
+                            <input placeholder="My Gym" style="background: #232222;border: 0px;">
+                        </div>
+                    </li>
                 </ul>
                 <div class="mainn">
                     <bi class="bi-list" id="menu-icon"></bi>
                 </div>
             </div>
         </div>
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div class="login-container" id="modal-content">
+                    <!-- Initial Content: Sign In Form -->
+                    <h2>Sign In</h2>
+                    <form id="login-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Enter Email" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="Password" required>
+                            <button type="button" class="show-password"></button>
+                        </div>
+                        <div class="actions">
+                            <a href="#" class="signup" id="signup-link">Click <span>here</span> to Sign Up</a>
+                            <a href="#" class="forgot-password" id="forgot-password-link">Forgot Password ?</a>
+                        </div>
+                        <button type="submit" class="sign-btn">Sign</button>
+                    </form>
+                    <div class="social-login">
+                        <p>Or continue</p>
+                        <div class="social-icons">
+                            <button class="google-btn"><img src="assets/img/google.png" ></button>
+                            <button class="apple-btn"><img src="assets/img/apple.png" ></button>
+                            <button class="facebook-btn"><img src="assets/img/facebook.png" ></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
-        <section class="section_two mb-5">
+        <section class="section_two mb-5 mt-5">
             <div class="container">
                 <h3 class="main_h3_gyms pt-4">14 Gyms with “My Gym” in their name</h3>
                 <div class="row">
@@ -113,6 +329,7 @@ h3.main_h3_gyms.pt-4 {
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -130,6 +347,8 @@ h3.main_h3_gyms.pt-4 {
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -142,11 +361,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col">
+                    <div class="col-lg-6 col-md-6 mt-4 section_one_col">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -159,11 +380,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col">
+                    <div class="col-lg-6 col-md-6 mt-4 section_one_col">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -176,11 +399,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col">
+                    <div class="col-lg-6 col-md-6 mt-4 section_one_col">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -193,11 +418,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col">
+                    <div class="col-lg-6 col-md-6 mt-4 section_one_col">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -210,11 +437,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col">
+                    <div class="col-lg-6 col-md-6 mt-4 section_one_col">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -227,11 +456,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col">
+                    <div class="col-lg-6 col-md-6 mt-4 section_one_col">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -244,11 +475,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col">
+                    <div class="col-lg-6 col-md-6 mt-4 section_one_col">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -261,11 +494,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col">
+                    <div class="col-lg-6 col-md-6 mt-4 section_one_col">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -278,11 +513,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col">
+                    <div class="col-lg-6 col-md-6 mt-4 section_one_col">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -295,11 +532,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col">
+                    <div class="col-lg-6 col-md-6 mt-4 section_one_col">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -312,11 +551,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col">
+                    <div class="col-lg-6 col-md-6 mt-4 mb-5 section_one_col">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -329,11 +570,13 @@ h3.main_h3_gyms.pt-4 {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mt-5 section_one_col ">
+                    <div class="col-lg-6 col-md-6 mt-4 mb-5 section_one_col ">
                         <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                             <div class="card-body section_one_cardbody">
                                 <h3 class="section_one_h4">My Cheer Gym</h3>
                                 <span class="span_sec_one text-dark">Denver, Colorado</span>
+                                <span class="ml-2"><img src="assets/img/blackvector.png"></span>
+
                                 <span class="span_sec_two">
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;margin-left: 18px;border: 0px;"></i>
                                     <i class="fas fa-star" style="color: #FFD89E;font-size: 23px;border: 0px;"></i>
@@ -370,18 +613,151 @@ h3.main_h3_gyms.pt-4 {
                     <a href="#" class="footer_link">Blog</a>
                 </div>
                 <div class="footer_div_three col-lg-1 col-sm-1 col-md-1 col-12 mt-5">
-                    <ul class="ul_footer">
+                    <ul class="ul_  footer">
                         <li class="li_footer1"><a href="#" class="instagram1"><i class="bi bi-instagram iconnns"></i></a></li>
                         <li class="li_footer2"><a href="#" class="twitter2"><i class="bi bi-twitter iconnns"></i></a></li>
                         <li class="li_footer3"><a href="#" class="tiktok3"><i class="bi bi-tiktok iconnns"></i></a></li>
                     </ul>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-12 copyrightdiv">
                     <p class="footer_pragraphy">© 2024 Rate My Cheer Gym, LLC. All Rights Reserved</p>
                 </div>
             </div>
         </div>
     </footer>
     <script src="assets/js/style.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById("login-modal");
+    var loginBtn = document.getElementById("login-link");
+    var signupNavbarBtn = document.getElementById("signup-link-navbar");
+    var span = document.getElementsByClassName("close-button")[0];
+    var modalContent = document.getElementById("modal-content");
+
+    var loginFormHTML = `
+        <h2>Sign In</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <input type="email" placeholder="Enter Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password" required>
+                <button type="button" class="show-password"></button>
+            </div>
+            <div class="actions">
+                <a href="#" class="signup" id="signup-link">Click <span>here</span> to Sign Up</a>
+                <a href="#" class="forgot-password" id="forgot-password-link">Forgot Password ?</a>
+            </div>
+            <button type="submit" class="sign-btn">Sign</button>
+        </form>
+        <div class="social-login">
+            <p>Or continue</p>
+            <div class="social-icons">
+                <button class="google-btn"><img src="assets/img/google.png"></button>
+                <button class="apple-btn"><img src="assets/img/apple.png"></button>
+                <button class="facebook-btn"><img src="assets/img/facebook.png"></button>
+            </div>
+        </div>
+    `;
+
+    var signupFormHTML = `
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <div class="input-group">
+                <input type="text" placeholder="Full Name" class="form-control" required>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Enter Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password" required>
+                <button type="button" class="show-password"></button>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Confirm Password" required>
+            </div>
+            <div class="actions">
+                  <a href="#" class="signup" id="signin-link">Click <span>here</span> to Sign In</a>
+            </div>
+            <button type="submit" class="sign-btn">Sign Up</button>
+        </form>
+        <div class="social-login">
+            <p>Or continue</p>
+            <div class="social-icons">
+                <button class="google-btn"><img src="assets/img/google.png"></button>
+                <button class="apple-btn"><img src="assets/img/apple.png"></button>
+                <button class="facebook-btn"><img src="assets/img/facebook.png"></button>
+            </div>
+        </div>
+    `;
+
+    var forgotPasswordFormHTML = `
+        <h2>Forgot Password</h2>
+        <form id="forgot-password-form">
+            <div class="input-group">
+                <input type="email" placeholder="Enter Email" required>
+            </div>
+            <div class="actions">
+                  <a href="#" class="signup" id="signin-link">Click <span>here</span> to Sign In</a>
+
+            </div>
+            <button type="submit" class="sign-btn">Reset Password</button>
+        </form>
+    `;
+
+    loginBtn.onclick = function() {
+        modal.style.display = "block";
+        modalContent.innerHTML = loginFormHTML;
+        addToggleEventListeners();
+    }
+
+    signupNavbarBtn.onclick = function() {
+        modal.style.display = "block";
+        modalContent.innerHTML = signupFormHTML;
+        addToggleEventListeners();
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    function addToggleEventListeners() {
+        var signupLink = document.getElementById("signup-link");
+        var signinLink = document.getElementById("signin-link");
+        var forgotPasswordLink = document.getElementById("forgot-password-link");
+
+        if (signupLink) {
+            signupLink.onclick = function(event) {
+                event.preventDefault();
+                modalContent.innerHTML = signupFormHTML;
+                addToggleEventListeners();
+            }
+        }
+
+        if (signinLink) {
+            signinLink.onclick = function(event) {
+                event.preventDefault();
+                modalContent.innerHTML = loginFormHTML;
+                addToggleEventListeners();
+            }
+        }
+
+        if (forgotPasswordLink) {
+            forgotPasswordLink.onclick = function(event) {
+                event.preventDefault();
+                modalContent.innerHTML = forgotPasswordFormHTML;
+                addToggleEventListeners();
+            }
+        }
+    }
+});
+
+        </script>
 </body>
 </html>
