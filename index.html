@@ -463,14 +463,15 @@ input[type="email"], input[type="password"] {
                         <div class="social-login">
                             <p>Or continue</p>
                             <div class="social-icons">
-                                <button class="google-btn"><img src="assets/img/google.png" ></button>
-                                <button class="apple-btn"><img src="assets/img/apple.png" ></button>
-                                <button class="facebook-btn"><img src="assets/img/facebook.png" ></button>
+                                <button class="google-btn"><img src="assets/img/google.png"></button>
+                                <button class="apple-btn"><img src="assets/img/apple.png"></button>
+                                <button class="facebook-btn"><img src="assets/img/facebook.png"></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        
         
         
 
@@ -594,7 +595,7 @@ input[type="email"], input[type="password"] {
         <script src="assets/js/style.js"></script>
 
         <script>
-        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function() {
     var modal = document.getElementById("login-modal");
     var loginBtn = document.getElementById("login-link");
     var signupNavbarBtn = document.getElementById("signup-link-navbar");
@@ -665,8 +666,23 @@ input[type="email"], input[type="password"] {
                 <input type="email" placeholder="Enter Email" required>
             </div>
             <div class="actions">
-                  <a href="#" class="signup" id="signin-link">Click <span>here</span> to Sign In</a>
+                <a href="#" class="signup" id="signin-link">Click <span>here</span> to Sign In</a>
+            </div>
+            <button type="submit" class="sign-btn">Reset Password</button>
+        </form>
+    `;
 
+    var resetPasswordFormHTML = `
+        <h2>Reset Password</h2>
+        <form id="reset-password-form">
+            <div class="input-group">
+                <input type="password" placeholder="New Password" required>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Confirm New Password" required>
+            </div>
+            <div class="actions">
+             <a href="#" class="signup" id="signin-link">Click <span>here</span> to Sign In</a>
             </div>
             <button type="submit" class="sign-btn">Reset Password</button>
         </form>
@@ -719,6 +735,15 @@ input[type="email"], input[type="password"] {
             forgotPasswordLink.onclick = function(event) {
                 event.preventDefault();
                 modalContent.innerHTML = forgotPasswordFormHTML;
+                addToggleEventListeners();
+            }
+        }
+
+        var forgotPasswordForm = document.getElementById("forgot-password-form");
+        if (forgotPasswordForm) {
+            forgotPasswordForm.onsubmit = function(event) {
+                event.preventDefault();
+                modalContent.innerHTML = resetPasswordFormHTML;
                 addToggleEventListeners();
             }
         }
