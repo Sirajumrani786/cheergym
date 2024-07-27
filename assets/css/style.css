@@ -325,6 +325,10 @@ a.review_btn {
    align-items: center; 
   width: 300px;
 }
+a#forgot-password-link {
+  color: #007bff !important;
+  text-decoration: underline;
+}
 section.section-three {
   background: #dedede;
 }
