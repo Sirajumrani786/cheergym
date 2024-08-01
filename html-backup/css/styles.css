@@ -1,0 +1,203 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure the HTML and body take up full height */
+html, body {
+    height: 100%;
+}
+
+
+
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(45deg, #191970, #e52e71); /* Midnight blue and pink gradient */
+    color: #fff;
+}
+
+
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+/* Hero Section styles */
+.hero {
+    text-align: center;
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* or 'contain', depending on the desired behavior */
+}
+
+.hero-text {
+    padding: 20px 0; /* Space between image and text */
+}
+
+.hero h2 {
+    font-size: 48px;
+}
+
+
+
+
+/* Main Content Section styles */
+.main-content {
+    background-color: #ffffffd4;
+    padding: 80px 0;
+    text-align: center;
+    color: #333; /* Adjust text color to ensure visibility */
+}
+
+.main-content p,
+.main-content ul,
+.main-content .cta-message,
+.main-content form {
+    margin-bottom: 20px;
+}
+
+.main-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+
+
+    .main-content form input[type="email"] {
+        width: 250px; /* Adjust width of input box */
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .main-content form button {
+        width: 100px;
+        background-color: #e52e71;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%; /* Ensure footer width covers full window */
+
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .main-content h2 {
+        font-size: 24px;
+    }
+
+    .main-content p,
+    .main-content ul,
+    .main-content .cta-message {
+        font-size: 16px;
+    }
+
+    .main-content form input[type="email"] {
+        width: calc(100% - 120px);
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* Mailchimp Form styles */
+.mailchimp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#mc_embed_signup {
+    background: #ffffff69; 
+    clear: left; 
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#mc_embed_signup h2 {
+    color: #333;
+}
+
+#mc_embed_signup .mc-field-group label {
+    color: #333;
+}
+
+#mc_embed_signup .mc-field-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#mc_embed_signup .button {
+    background-color: #e52e71;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
