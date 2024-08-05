@@ -63,7 +63,9 @@ Route::get('/dashboard', function () {
     ]);
 })->middleware(['auth', 'admin_check'])->name('dashboard');
 
-Route::post('saveGym', [GymController::class, 'saveGym'])->name('gym.save')->middleware(['auth']);
+// Route::post('saveGym', [GymController::class, 'saveGym'])->name('gym.save')->middleware(['auth']);
+
+Route::post('saveGym', [GymController::class, 'saveGym'])->name('gym.save')->middleware('auth');
 
 Route::middleware(['auth', 'admin_check'])->group(function () {
 

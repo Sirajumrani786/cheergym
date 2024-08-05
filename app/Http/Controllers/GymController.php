@@ -289,35 +289,43 @@ class GymController extends Controller
     }
     
     public function saveGym(Request $request)
-{
-    // Validate the incoming request data
-    $validatedData = $request->validate([
-        'user_id' => 'required|integer',
-        'gym_id' => 'required|integer',
-    ]);
-
-    // Check if the gym is already saved by the user
-    $existingSavedGym = SavedGyms::where('user_id', $validatedData['user_id'])
-                                  ->where('gym_id', $validatedData['gym_id'])
-                                  ->first();
-
-    if ($existingSavedGym) {
-        // If it exists, delete the record
-        $existingSavedGym->delete();
-
-        // Return JSON response with unsaved success message
-        return response()->json(['success' => true, 'message' => 'You have unsaved the gym successfully!']);
-    } else {
-        // If it does not exist, create a new SavedGyms instance and save the data
-        $savedGym = new SavedGyms();
-        $savedGym->user_id = $validatedData['user_id'];
-        $savedGym->gym_id = $validatedData['gym_id'];
-        $savedGym->save();
-
-        // Return JSON response with saved success message
-        return response()->json(['success' => true, 'message' => 'Gym saved successfully!']);
+    {
+        // Validate the incoming request data
+        $validatedData = $request->validate([
+            'gym_id' => 'required|integer',
+        ]);
+    
+        $user = auth()->user();
+        
+        if (!$user) {
+            return response()->json(['success' => false, 'message' => 'User not authenticated.'], 401);
+        }
+    
+        $gymId = $validatedData['gym_id'];
+    
+        // Check if the gym is already saved by the user
+        $existingSavedGym = SavedGyms::where('user_id', $user->id)
+                                      ->where('gym_id', $gymId)
+                                      ->first();
+    
+        if ($existingSavedGym) {
+            // If it exists, delete the record
+            $existingSavedGym->delete();
+    
+            // Return JSON response with unsaved success message
+            return response()->json(['success' => true, 'message' => 'You have unsaved the gym successfully!']);
+        } else {
+            // If it does not exist, create a new SavedGyms instance and save the data
+            SavedGyms::create([
+                'user_id' => $user->id,
+                'gym_id' => $gymId,
+            ]);
+    
+            // Return JSON response with saved success message
+            return response()->json(['success' => true, 'message' => 'Gym saved successfully!']);
+        }
     }
-}
+    
 
 
 

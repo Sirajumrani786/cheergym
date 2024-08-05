@@ -75,7 +75,9 @@ public function getLikesDislikes()
         // if (!Auth::check()) {
         //     return redirect()->route('flogin');
         // }
-        $reviews = DB::table('reviews')->get();
+        $reviews = DB::table('reviews')
+        ->where('gym_id', $id)
+        ->get();
         $gym = Gym::find($id);
     
         $isSaved = false;
@@ -316,33 +318,43 @@ public function getLikesDislikes()
 
     }
 
-    public function ratingstore(Request $request){
+    public function ratingstore(Request $request)
+    {
         // Validate incoming data
         $validatedData = $request->validate([
-            'facilities_rating' => 'required|numeric|min:1|max:5',
-            'coaching_rating' => 'required|numeric|min:1|max:5',
-            'atmosphere_rating' => 'required|numeric|min:1|max:5',
-            'overall_rating' => 'required|numeric|min:1|max:5',
-            // Add more validation rules if needed
+            'facility_cleanliness' => 'required|numeric|min:1|max:5',
+            'coaching_quality' => 'required|numeric|min:1|max:5',
+            'equipment_quality' => 'required|numeric|min:1|max:5',
+            'atmosphere' => 'required|numeric|min:1|max:5',
+            'safety_standards' => 'required|numeric|min:1|max:5',
+            'communication' => 'required|numeric|min:1|max:5',
+            'value_for_money' => 'required|numeric|min:1|max:5',
+            'class_variety' => 'required|numeric|min:1|max:5',
+            'feedback' => 'nullable|string',
+            'gym_id' => 'required|integer|exists:gyms,id',
         ]);
+    
         $user_id = Auth::user()->id;
-     
     
         // Insert data into the database using the query builder
         DB::table('reviews')->insert([
-            'facilities_rating' => $validatedData['facilities_rating'],
-            'coaching_rating' => $validatedData['coaching_rating'],
-            'atmosphere_rating' => $validatedData['atmosphere_rating'],
-            'overall_rating' => $validatedData['overall_rating'],
-            'feedback'       => $request->feedback,
-            'gym_id'        => $request->gym_id,
-            'user_id'        => $user_id,
+            'facilities_rating' => $validatedData['facility_cleanliness'],
+            'coaching_rating' => $validatedData['coaching_quality'],
+            'equipment_quality' => $validatedData['equipment_quality'],
+            'atmosphere_rating' => $validatedData['atmosphere'],
+            'safety_standards' => $validatedData['safety_standards'],
+            'communication' => $validatedData['communication'],
+            'value_for_money' => $validatedData['value_for_money'],
+            'class_variety' => $validatedData['class_variety'],
+            'feedback' => $validatedData['feedback'],
+            'gym_id' => $validatedData['gym_id'],
+            'user_id' => $user_id,
         ]);
     
         // Redirect to the desired route, e.g., 'gym.show' with the gym id
         return redirect()->route('gym', ['id' => $request->gym_id]);
-
     }
+    
 
    
     public function edit_review(Request $request, $id)

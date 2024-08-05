@@ -284,26 +284,43 @@ margin-bottom: 0px;
             $facilitiesTotal = 0;
             $coachingTotal = 0;
             $atmosphereTotal = 0;
-            $overallTotal = 0;
+            $equipmentQualityTotal = 0;
+            $safetyStandardsTotal = 0;
+            $communicationTotal = 0;
+            $valueForMoneyTotal = 0;
+            $classVarietyTotal = 0;
             $numReviews = count($gym->reviews);
         @endphp
-
+    
         @foreach ($gym->reviews as $review)
         @php
             $facilitiesTotal += $review->facilities_rating;
             $coachingTotal += $review->coaching_rating;
             $atmosphereTotal += $review->atmosphere_rating;
-            $overallTotal += $review->overall_rating;
+            $equipmentQualityTotal += $review->equipment_quality;
+            $safetyStandardsTotal += $review->safety_standards;
+            $communicationTotal += $review->communication;
+            $valueForMoneyTotal += $review->value_for_money;
+            $classVarietyTotal += $review->class_variety;
         @endphp
         @endforeach
-
+    
         @php
             $averageFacilities = $numReviews > 0 ? $facilitiesTotal / $numReviews : 0;
             $averageCoaching = $numReviews > 0 ? $coachingTotal / $numReviews : 0;
             $averageAtmosphere = $numReviews > 0 ? $atmosphereTotal / $numReviews : 0;
-            $averageOverall = $numReviews > 0 ? $overallTotal / $numReviews : 0;
+            $averageEquipmentQuality = $numReviews > 0 ? $equipmentQualityTotal / $numReviews : 0;
+            $averageSafetyStandards = $numReviews > 0 ? $safetyStandardsTotal / $numReviews : 0;
+            $averageCommunication = $numReviews > 0 ? $communicationTotal / $numReviews : 0;
+            $averageValueForMoney = $numReviews > 0 ? $valueForMoneyTotal / $numReviews : 0;
+            $averageClassVariety = $numReviews > 0 ? $classVarietyTotal / $numReviews : 0;
+    
+            // Calculate overall average rating
+            $overallTotal = $averageFacilities + $averageCoaching + $averageAtmosphere + $averageEquipmentQuality + $averageSafetyStandards + $averageCommunication + $averageValueForMoney + $averageClassVariety;
+            $overallAverage = $numReviews > 0 ? $overallTotal / 8 : 0;
         @endphp
-         <div class="col-lg-6 col-md-6 mt-3 section_one_col margindey">
+    
+        <div class="col-lg-6 col-md-6 mt-3 section_one_col margindey">
             <a class="text-dark text-decoration-none" href="{{ route('gym', $gym->id) }}">
                 <div class="card section_one_card" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15); border-radius: 20px;">
                     <div class="card-body section_one_cardbody">
@@ -312,7 +329,7 @@ margin-bottom: 0px;
                         <span class="ml-2"><img src="front_assets/img/blackvector.png" alt="Vector"></span>
                         <span class="span_sec_two">
                             @php
-                                $rating = $gym->rating; // Assuming $gym->rating gives the rating out of 5
+                                $rating = $overallAverage; // Use the overall average rating for the stars
                                 $fullStars = floor($rating);
                                 $halfStar = ($rating - $fullStars) >= 0.5;
                             @endphp
@@ -326,13 +343,13 @@ margin-bottom: 0px;
                                 @endif
                             @endfor
                         </span>
-                        <span class="span_sec_three ml-2 text-dark">{{ $gym->rating }} star rating</span>
+                        <span class="span_sec_three ml-2 text-dark">{{ number_format($overallAverage, 1) }} star rating</span>
                         <br><br>
                     </div>
                 </div>
             </a>
         </div>
-        
+    
         @endforeach
         <div class="col-lg-12 mt-5 mb-5 text-center">
         <div class="lastbtn">
@@ -344,9 +361,10 @@ margin-bottom: 0px;
             <a href="#" class="text-dark mb-2" data-toggle="modal" data-target="#loginModal">Add a Gym</a>
             @endif
         </div>
+        </div>
+        </div>
     </div>
-    </div>
-</div>
+    
 
 </main>
 

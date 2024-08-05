@@ -7,7 +7,7 @@
         <link
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
             rel="stylesheet">
-        <link rel="stylesheet" href="front_assets/css/style.css">
+        <link rel="stylesheet" href="{{asset('front_assets/css/style.css')}}">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
         <link rel="stylesheet"
@@ -322,7 +322,7 @@ li.term_li {
         <header style="background: linear-gradient(to bottom, black, #464141);">
             <div class="container">
                 <div class="row">
-                    <a href="{{url('/')}}" class="logo"><img src="front_assets/img/logo.png" alt></a>
+                    <a href="{{url('/')}}" class="logo"><img src="{{asset('front_assets/img/logo.png')}}" alt></a>
 
                     <ul class="navbarr">
                         <li><a href="{{url('/')}}" class="nav_link">Home</a></li>

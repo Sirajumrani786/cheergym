@@ -47,11 +47,11 @@
  --}}
 
 <footer
-    style="background-image: url('front_assets/img/banner_one.png');background-size: cover;background-position: center;background-repeat: no-repeat;height: auto;">
+    style="background-image: url('{{asset('front_assets/img/banner_one.png')}}');background-size: cover;background-position: center;background-repeat: no-repeat;height: auto;">
     <div class="container footer_container">
         <div class="footer_row row">
             <div class="footer_div_one col-lg-4 col-sm-4 col-md-4 col-12 mt-4">
-                <img src="front_assets/img/logo.png" class="w-100">
+                <img src="{{asset('front_assets/img/logo.png')}}" class="w-100">
             </div>
             <div class="footer_div_two col-lg-7 col-sm-7 col-md-7 col-12 mt-5">
                 <a href="{{ route('help') }}" class="footer_link">Help</a>

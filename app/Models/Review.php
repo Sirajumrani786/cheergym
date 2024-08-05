@@ -1,8 +1,8 @@
 <?php
-
 namespace App\Models;
 
-use App\Report;
+
+use App\Models\Report;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,8 +15,11 @@ class Review extends Model
         'facilities_rating',
         'coaching_rating',
         'atmosphere_rating',
-        'overall_rating',
-        'colors',
+        'equipment_quality', // added field
+        'safety_standards',  // added field
+        'communication',     // added field
+        'value_for_money',   // added field
+        'class_variety',     // added field
         'status',
         'user_id',
         'gym_id',
